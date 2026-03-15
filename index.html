@@ -519,21 +519,22 @@
 <!-- NAV -->
 <nav class="eg-nav">
   <div class="eg-logo"><span>EN</span><span>GEN</span></div>
-  <button class="eg-nav-cta">Get Started Free →</button>
+  <button class="eg-nav-cta" data-i18n="nav_cta">Get Started Free →</button>
 </nav>
 
 <!-- LANGUAGE BAR -->
-<div class="eg-lang-bar">
-  <span class="eg-lang-bar-label">Read this page in:</span>
-  <a href="#" class="eg-lang-link eg-lang-active" id="lang-en">🇺🇸 English</a>
+<div class="eg-lang-bar" id="lang-bar">
+  <span class="eg-lang-bar-label" id="lang-bar-label">Read this page in:</span>
+  <button class="eg-lang-link eg-lang-active" data-lang="en">🇺🇸 English</button>
   <span class="eg-lang-divider">·</span>
-  <a href="https://getengen.com/gap-spanish-learner-page" class="eg-lang-link" target="_blank">🇪🇸 Español</a>
+  <button class="eg-lang-link" data-lang="es">🇪🇸 Español</button>
   <span class="eg-lang-divider">·</span>
-  <a href="https://getengen.com/gap-swahili-learner-page" class="eg-lang-link" target="_blank">🇰🇪 Kiswahili</a>
+  <button class="eg-lang-link" data-lang="sw">🇰🇪 Kiswahili</button>
   <span class="eg-lang-divider">·</span>
-  <a href="https://getengen.com/gap-punjabi" class="eg-lang-link" target="_blank">🇮🇳 ਪੰਜਾਬੀ</a>
+  <button class="eg-lang-link" data-lang="pa">🇮🇳 ਪੰਜਾਬੀ</button>
   <span class="eg-lang-divider">·</span>
-  <a href="https://getengen.com/gap-learner-page-french" class="eg-lang-link" target="_blank">🇫🇷 Français</a>
+  <button class="eg-lang-link" data-lang="fr">🇫🇷 Français</button>
+  <span id="lang-loading" style="display:none;margin-left:10px;font-size:12px;color:#92400e;font-weight:600;">Translating...</span>
 </div>
 
 <!-- HERO -->
@@ -542,29 +543,29 @@
     <span class="eg-hero-badge-dot"></span>
     Free for Gap Inc. employees
   </div>
-  <h1>Your employer is paying<br>for this. <em>Just sign up.</em></h1>
-  <p class="eg-hero-sub">Gap Inc. is giving you 6 months of free English lessons — on your phone, on your schedule, at no cost to you.</p>
+  <h1 data-i18n="hero_h1">Your employer is paying<br>for this. <em>Just sign up.</em></h1>
+  <p class="eg-hero-sub" data-i18n="hero_sub">Gap Inc. is giving you 6 months of free English lessons — on your phone, on your schedule, at no cost to you.</p>
   <button class="eg-hero-cta">
-    Start Learning for Free
+    <span data-i18n="hero_cta">Start Learning for Free</span>
     <span class="eg-hero-arrow">→</span>
   </button>
   <div class="eg-trust-badges">
     <div class="eg-trust-badge">
       <span class="eg-trust-icon">🎓</span>
-      <span class="eg-trust-value">100% Free</span>
-      <span class="eg-trust-label">to you</span>
+      <span class="eg-trust-value" data-i18n="trust_free">100% Free</span>
+      <span class="eg-trust-label" data-i18n="trust_free_sub">to you</span>
     </div>
     <div class="eg-trust-divider"></div>
     <div class="eg-trust-badge">
       <span class="eg-trust-icon">📅</span>
-      <span class="eg-trust-value">6 Months</span>
-      <span class="eg-trust-label">full access</span>
+      <span class="eg-trust-value" data-i18n="trust_months">6 Months</span>
+      <span class="eg-trust-label" data-i18n="trust_months_sub">full access</span>
     </div>
     <div class="eg-trust-divider"></div>
     <div class="eg-trust-badge">
       <span class="eg-trust-icon">👩‍🏫</span>
-      <span class="eg-trust-value">Personal Coach</span>
-      <span class="eg-trust-label">included</span>
+      <span class="eg-trust-value" data-i18n="trust_coach">Personal Coach</span>
+      <span class="eg-trust-label" data-i18n="trust_coach_sub">included</span>
     </div>
   </div>
 
@@ -574,46 +575,40 @@
 <section class="eg-steps-section">
   <div class="eg-steps-inner">
     <div class="eg-steps-header">
-      <p class="eg-section-tag">How it works</p>
-      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(22px,2.8vw,32px);color:#111827;letter-spacing:-0.5px;margin-bottom:6px;">Ready in 3 simple steps</h2>
-      <p style="font-size:14px;color:#4b5563;line-height:1.6;">Takes about 3 minutes. Free for all Gap Inc. employees.</p>
+      <p class="eg-section-tag" data-i18n="steps_tag">How it works</p>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(22px,2.8vw,32px);color:#111827;letter-spacing:-0.5px;margin-bottom:6px;" data-i18n="steps_h2">Ready in 3 simple steps</h2>
+      <p style="font-size:14px;color:#4b5563;line-height:1.6;" data-i18n="steps_sub">Takes about 3 minutes. Free for all Gap Inc. employees.</p>
     </div>
     <div class="eg-steps">
-
       <div class="eg-step-card">
         <div class="eg-step-top">
           <div class="eg-step-num">1</div>
           <span class="eg-step-emoji">📋</span>
-          <div class="eg-step-title">Complete your application</div>
+          <div class="eg-step-title" data-i18n="step1_title">Complete your application</div>
         </div>
-        <div class="eg-step-desc">Answer a few quick questions so we can set up your account and match you with the right coach.</div>
+        <div class="eg-step-desc" data-i18n="step1_desc">Answer a few quick questions so we can set up your account and match you with the right coach.</div>
       </div>
-
       <div class="eg-step-arrow">→</div>
-
       <div class="eg-step-card">
         <div class="eg-step-top">
           <div class="eg-step-num">2</div>
           <span class="eg-step-emoji">📧</span>
-          <div class="eg-step-title">Check your email</div>
+          <div class="eg-step-title" data-i18n="step2_title">Check your email</div>
         </div>
-        <div class="eg-step-desc">You'll get a welcome email within 24 hours with your login link and everything you need to get started.</div>
+        <div class="eg-step-desc" data-i18n="step2_desc">You'll get a welcome email within 24 hours with your login link and everything you need to get started.</div>
       </div>
-
       <div class="eg-step-arrow">→</div>
-
       <div class="eg-step-card">
         <div class="eg-step-top">
           <div class="eg-step-num">3</div>
           <span class="eg-step-emoji">🚀</span>
-          <div class="eg-step-title">Start learning</div>
+          <div class="eg-step-title" data-i18n="step3_title">Start learning</div>
         </div>
-        <div class="eg-step-desc">Log in on any phone or computer and begin your first lesson — at your own pace, any time of day.</div>
+        <div class="eg-step-desc" data-i18n="step3_desc">Log in on any phone or computer and begin your first lesson — at your own pace, any time of day.</div>
       </div>
-
     </div>
     <div class="eg-steps-cta">
-      <button>Register Now — It's Free →</button>
+      <button data-i18n="steps_cta">Register Now — It's Free →</button>
     </div>
   </div>
 </section>
@@ -622,47 +617,47 @@
 <div class="eg-stats">
   <div class="eg-stat">
     <div class="eg-stat-num">94%</div>
-    <div class="eg-stat-label">improved their English confidence</div>
+    <div class="eg-stat-label" data-i18n="stat1">improved their English confidence</div>
   </div>
   <div class="eg-stat">
     <div class="eg-stat-num">79%</div>
-    <div class="eg-stat-label">achieved a career goal or promotion</div>
+    <div class="eg-stat-label" data-i18n="stat2">achieved a career goal or promotion</div>
   </div>
   <div class="eg-stat">
     <div class="eg-stat-num">92%</div>
-    <div class="eg-stat-label">improved their job skills too</div>
+    <div class="eg-stat-label" data-i18n="stat3">improved their job skills too</div>
   </div>
   <div class="eg-stat">
     <div class="eg-stat-num">6mo</div>
-    <div class="eg-stat-label">of full access, completely free</div>
+    <div class="eg-stat-label" data-i18n="stat4">of full access, completely free</div>
   </div>
 </div>
 
 <!-- WHAT IS ENGEN -->
 <section class="eg-section">
-  <p class="eg-section-tag">What is EnGen?</p>
-  <h2>Your personal English learning platform</h2>
-  <p class="eg-section-intro">EnGen is an AI-powered platform that personalizes English instruction to your level, goals, and schedule. Over 170 workforce-aligned courses — built for real life at work and beyond.</p>
+  <p class="eg-section-tag" data-i18n="engen_tag">What is EnGen?</p>
+  <h2 data-i18n="engen_h2">Your personal English learning platform</h2>
+  <p class="eg-section-intro" data-i18n="engen_intro">EnGen is an AI-powered platform that personalizes English instruction to your level, goals, and schedule. Over 170 workforce-aligned courses — built for real life at work and beyond.</p>
   <div class="eg-features">
     <div class="eg-feature-card">
       <div class="eg-feature-icon eg-icon-blue">📱</div>
-      <div class="eg-feature-title">Learn anywhere, anytime</div>
-      <div class="eg-feature-desc">Access lessons from your phone, tablet, or computer — 24 hours a day, 7 days a week. Study at home, on the bus, or on your break.</div>
+      <div class="eg-feature-title" data-i18n="feat1_title">Learn anywhere, anytime</div>
+      <div class="eg-feature-desc" data-i18n="feat1_desc">Access lessons from your phone, tablet, or computer — 24 hours a day, 7 days a week. Study at home, on the bus, or on your break.</div>
     </div>
     <div class="eg-feature-card">
       <div class="eg-feature-icon eg-icon-green">🎯</div>
-      <div class="eg-feature-title">Personalized to you</div>
-      <div class="eg-feature-desc">EnGen adapts to your English level and goals. Whether you want to communicate at work, with customers, or in daily life — the platform builds a path just for you.</div>
+      <div class="eg-feature-title" data-i18n="feat2_title">Personalized to you</div>
+      <div class="eg-feature-desc" data-i18n="feat2_desc">EnGen adapts to your English level and goals. Whether you want to communicate at work, with customers, or in daily life — the platform builds a path just for you.</div>
     </div>
     <div class="eg-feature-card">
       <div class="eg-feature-icon eg-icon-purple">👩‍🏫</div>
-      <div class="eg-feature-title">Live classes + a coach</div>
-      <div class="eg-feature-desc">Join 8 live group classes every month to practice speaking. A personal EnGen coach is also there to help you stay on track and reach your goals.</div>
+      <div class="eg-feature-title" data-i18n="feat3_title">Live classes + a coach</div>
+      <div class="eg-feature-desc" data-i18n="feat3_desc">Join 8 live group classes every month to practice speaking. A personal EnGen coach is also there to help you stay on track and reach your goals.</div>
     </div>
     <div class="eg-feature-card">
       <div class="eg-feature-icon eg-icon-amber">🏆</div>
-      <div class="eg-feature-title">Earn a certificate</div>
-      <div class="eg-feature-desc">Complete the program and receive an official certificate of completion with a certified English proficiency level — something you can show employers.</div>
+      <div class="eg-feature-title" data-i18n="feat4_title">Earn a certificate</div>
+      <div class="eg-feature-desc" data-i18n="feat4_desc">Complete the program and receive an official certificate of completion with a certified English proficiency level — something you can show employers.</div>
     </div>
   </div>
 </section>
@@ -671,7 +666,7 @@
 <div class="eg-testimonial-wrap">
   <div class="eg-testimonial-inner">
     <div class="eg-quote-mark">"</div>
-    <p class="eg-quote-text">I don't need a translator to communicate with my coworkers and friends anymore.</p>
+    <p class="eg-quote-text" data-i18n="testimonial">I don't need a translator to communicate with my coworkers and friends anymore.</p>
     <p class="eg-quote-source">— EnGen Learner, Gap Inc.</p>
   </div>
 </div>
@@ -679,17 +674,17 @@
 <!-- FAQ -->
 <section class="eg-faq-section">
   <div class="eg-faq-inner">
-    <p class="eg-section-tag">Questions?</p>
-    <h2>Common questions answered</h2>
+    <p class="eg-section-tag" data-i18n="faq_tag">Questions?</p>
+    <h2 data-i18n="faq_h2">Common questions answered</h2>
     <div id="faq-list"></div>
   </div>
 </section>
 
 <!-- BOTTOM CTA -->
 <section class="eg-bottom-cta">
-  <h2>Ready to grow your English?</h2>
-  <p>It's free, flexible, and built around your life. Enroll today and start your journey.</p>
-  <button class="eg-bottom-btn">Sign Up for Free →</button>
+  <h2 data-i18n="bottom_h2">Ready to grow your English?</h2>
+  <p data-i18n="bottom_sub">It's free, flexible, and built around your life. Enroll today and start your journey.</p>
+  <button class="eg-bottom-btn" data-i18n="bottom_cta">Sign Up for Free →</button>
 </section>
 
 <!-- FOOTER -->
@@ -725,8 +720,245 @@
 <script>
 (function() {
 
-  /* ── State ── */
-  var currentStep = 1;
+  /* ══════════════════════════════════════════════
+     CLAUDE-POWERED TRANSLATION ENGINE
+     ══════════════════════════════════════════════ */
+
+  var currentLang = 'en';
+  var translationCache = {}; /* { 'es': { hero_h1: '...', ... } } */
+
+  /* All English source strings — single source of truth */
+  var EN = {
+    nav_cta:        "Get Started Free →",
+    hero_h1:        "Your employer is paying for this. Just sign up.",
+    hero_sub:       "Gap Inc. is giving you 6 months of free English lessons — on your phone, on your schedule, at no cost to you.",
+    hero_cta:       "Start Learning for Free",
+    trust_free:     "100% Free",  trust_free_sub: "to you",
+    trust_months:   "6 Months",   trust_months_sub: "full access",
+    trust_coach:    "Personal Coach", trust_coach_sub: "included",
+    steps_tag:      "How it works",
+    steps_h2:       "Ready in 3 simple steps",
+    steps_sub:      "Takes about 3 minutes. Free for all Gap Inc. employees.",
+    step1_title:    "Complete your application",
+    step1_desc:     "Answer a few quick questions so we can set up your account and match you with the right coach.",
+    step2_title:    "Check your email",
+    step2_desc:     "You'll get a welcome email within 24 hours with your login link and everything you need to get started.",
+    step3_title:    "Start learning",
+    step3_desc:     "Log in on any phone or computer and begin your first lesson — at your own pace, any time of day.",
+    steps_cta:      "Register Now — It's Free →",
+    stat1: "improved their English confidence",
+    stat2: "achieved a career goal or promotion",
+    stat3: "improved their job skills too",
+    stat4: "of full access, completely free",
+    engen_tag:      "What is EnGen?",
+    engen_h2:       "Your personal English learning platform",
+    engen_intro:    "EnGen is an AI-powered platform that personalizes English instruction to your level, goals, and schedule. Over 170 workforce-aligned courses — built for real life at work and beyond.",
+    feat1_title:    "Learn anywhere, anytime",
+    feat1_desc:     "Access lessons from your phone, tablet, or computer — 24 hours a day, 7 days a week. Study at home, on the bus, or on your break.",
+    feat2_title:    "Personalized to you",
+    feat2_desc:     "EnGen adapts to your English level and goals. Whether you want to communicate at work, with customers, or in daily life — the platform builds a path just for you.",
+    feat3_title:    "Live classes + a coach",
+    feat3_desc:     "Join 8 live group classes every month to practice speaking. A personal EnGen coach is also there to help you stay on track and reach your goals.",
+    feat4_title:    "Earn a certificate",
+    feat4_desc:     "Complete the program and receive an official certificate of completion with a certified English proficiency level — something you can show employers.",
+    testimonial:    "I don't need a translator to communicate with my coworkers and friends anymore.",
+    faq_tag:        "Questions?",
+    faq_h2:         "Common questions answered",
+    bottom_h2:      "Ready to grow your English?",
+    bottom_sub:     "It's free, flexible, and built around your life. Enroll today and start your journey.",
+    bottom_cta:     "Sign Up for Free →",
+    /* Modal step strings */
+    modal_step1_title: "Nice to meet you!",
+    modal_step1_sub:   "Let's start with your basic info. Takes about 3 minutes.",
+    modal_step2_title: "Tell us about yourself",
+    modal_step2_sub:   "Help us personalize your English learning experience.",
+    modal_step3_title: "Your schedule",
+    modal_step3_sub:   "Select your days off so we can schedule group classes around your availability.",
+    modal_step4_sub:   "Take a quick look below. If anything looks wrong, just hit Back to fix it.",
+    /* Form labels */
+    lbl_firstname:     "First name", lbl_lastname: "Last name",
+    lbl_email:         "Email address", lbl_phone: "Phone number",
+    lbl_whatsapp:      "Is this your WhatsApp number?",
+    lbl_lang:          "Native language", lbl_lang_other: "If not listed above, type your language here:",
+    lbl_loc:           "Gap Inc. facility / location",
+    lbl_startdate:     "Start date at Gap Inc.",
+    lbl_daysoff:       "Select your days off:",
+    lbl_questions:     "Any questions for us?",
+    /* Form hints */
+    hint_name:         "Your legal name as a Gap Inc. employee",
+    hint_email:        "We'll send your login details here",
+    hint_phone:        "So your coach can reach you to help you get started",
+    hint_whatsapp:     "Your coach may use WhatsApp to send reminders and tips",
+    hint_lang:         "Helps us personalize your lessons and match you with the right coach",
+    hint_loc:          "Confirms your eligibility for this free program",
+    hint_startdate:    "Required to verify your Gap Inc. employment",
+    hint_daysoff:      "So we can schedule live group classes on days that work for you",
+    /* Form placeholders & options */
+    placeholder_firstname: "Maria", placeholder_lastname: "Garcia",
+    placeholder_email: "maria@gap.com", placeholder_phone: "(555) 000-0000",
+    placeholder_lang_other: "e.g. Amharic, Khmer...",
+    placeholder_questions: "Type any questions you have...",
+    opt_yes: "Yes", opt_no: "No",
+    opt_lang_select: "Please select...",
+    opt_loc_select: "Select your facility...",
+    /* Buttons */
+    btn_continue: "Continue →", btn_back: "← Back", btn_apply: "Apply Now 🎉",
+    btn_done: "Done",
+    /* Misc */
+    step_of: "Step", of: "of",
+    /* FAQ */
+    faq_q1: "Do I have to pay anything?",
+    faq_a1: "No — Gap Inc. covers the full cost of the EnGen program. It is completely free for all eligible employees.",
+    faq_q2: "Who is eligible to participate?",
+    faq_a2: "All Gap Inc. employees at the Fishkill, Gallatin, Brampton, Fresno, Longview, Phoenix, or Groveport distribution centers who are English language learners. Spots are available on a first-come, first-served basis.",
+    faq_q3: "How long will I have access?",
+    faq_a3: "You will have 6 months of full access to the EnGen platform, including live group classes, self-paced lessons, pronunciation tools, and your personal coach.",
+    faq_q4: "How much time do I need each week?",
+    faq_a4: "We recommend studying 2-3 hours per week and attending 2 live classes. Consistency is the key to seeing real progress in your English.",
+    faq_q5: "Can I learn on my phone?",
+    faq_a5: "Yes! EnGen works on any smartphone, tablet, or computer. Search EnGen in your app store or visit app.getengen.com in any browser.",
+    faq_q6: "What if I have more questions?",
+    faq_a6: "Email help@getengen.com or contact your Gap Inc. HR Department. An EnGen coach will also be available once you sign up.",
+    /* Review screen */
+    review_next: "What happens next?",
+    review_next_body: "After you submit, you'll receive a welcome email within 24 hours with your login details and everything you need to get started. Your personal coach will reach out shortly after.",
+    review_lbl_name: "Your name", review_lbl_email: "Email",
+    review_lbl_phone: "Phone", review_lbl_whatsapp: "WhatsApp",
+    review_lbl_lang: "Native language", review_lbl_loc: "Your facility",
+    review_lbl_start: "Start date", review_lbl_days: "Days off",
+    review_legal: "By submitting, I agree and consent to have an EnGen representative contact me. Participation is voluntary and free. I agree to EnGen's Terms of Use and Privacy Policy.",
+    /* Success screen */
+    success_title: "You're all set!", 
+    success_body: "Your application has been received. Check your email for next steps — your EnGen coach will be in touch shortly."
+  };
+
+  var LANG_NAMES = { en:'English', es:'Español', sw:'Kiswahili', pa:'ਪੰਜਾਬੀ', fr:'Français' };
+
+  /* Apply a translations object to all data-i18n elements on the page */
+  function applyTranslations(t) {
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+  }
+
+  /* Rebuild FAQ with translated strings */
+  function rebuildFaq(t) {
+    var faqList = document.getElementById('faq-list');
+    if (!faqList) return;
+    faqList.innerHTML = '';
+    for (var i = 1; i <= 6; i++) {
+      var q = t['faq_q' + i]; var a = t['faq_a' + i];
+      if (!q) continue;
+      var div = document.createElement('div');
+      div.className = 'eg-faq-item';
+      div.innerHTML =
+        '<div class="eg-faq-q" data-index="' + (i-1) + '">' +
+          '<span>' + q + '</span>' +
+          '<span class="eg-faq-chevron" id="chev-' + (i-1) + '">&#8964;</span>' +
+        '</div>' +
+        '<div class="eg-faq-a" id="faq-a-' + (i-1) + '">' + a + '</div>';
+      faqList.appendChild(div);
+    }
+  }
+
+  /* Call Claude API to translate all strings */
+  async function fetchTranslations(lang) {
+    if (translationCache[lang]) return translationCache[lang];
+
+    var langName = LANG_NAMES[lang] || lang;
+    var keys = Object.keys(EN);
+    var valuesJson = JSON.stringify(EN);
+
+    var prompt = 'You are a professional translator. Translate ALL values in this JSON object from English to ' + langName + '. ' +
+      'Rules: (1) Keep ALL keys exactly the same. (2) Only translate the values, never the keys. ' +
+      '(3) Keep placeholders like "Maria", "Garcia", "maria@gap.com" as-is. ' +
+      '(4) Keep brand names "EnGen", "Gap Inc.", "WhatsApp" as-is. ' +
+      '(5) Keep URLs and email addresses as-is. ' +
+      '(6) Return ONLY valid JSON, no markdown, no explanation. ' +
+      'JSON to translate:\n' + valuesJson;
+
+    var response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 4000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    var data = await response.json();
+    var text = data.content[0].text.trim();
+    /* Strip markdown fences if present */
+    text = text.replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'');
+    var translated = JSON.parse(text);
+    translationCache[lang] = translated;
+    return translated;
+  }
+
+  /* Main translate function */
+  async function translateTo(lang) {
+    if (lang === currentLang) return;
+
+    var loading = document.getElementById('lang-loading');
+    if (loading) loading.style.display = 'inline';
+
+    /* Update active button state */
+    document.querySelectorAll('[data-lang]').forEach(function(btn) {
+      btn.classList.toggle('eg-lang-active', btn.getAttribute('data-lang') === lang);
+    });
+
+    if (lang === 'en') {
+      applyTranslations(EN);
+      rebuildFaq(EN);
+      /* Reset modal step strings */
+      currentLang = 'en';
+      if (loading) loading.style.display = 'none';
+      /* Re-render modal step if open */
+      if (document.getElementById('step-body')) renderStep(currentStep, false);
+      return;
+    }
+
+    try {
+      var t = await fetchTranslations(lang);
+      applyTranslations(t);
+      rebuildFaq(t);
+      currentLang = lang;
+      /* Re-render modal step if open */
+      if (document.getElementById('step-body') && document.getElementById('step-body').innerHTML) {
+        renderStep(currentStep, false);
+      }
+    } catch(e) {
+      console.error('Translation error:', e);
+      /* Restore English on failure */
+      document.querySelectorAll('[data-lang]').forEach(function(btn) {
+        btn.classList.toggle('eg-lang-active', btn.getAttribute('data-lang') === 'en');
+      });
+    } finally {
+      if (loading) loading.style.display = 'none';
+    }
+  }
+
+  /* Wire up language buttons */
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('[data-lang]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        translateTo(btn.getAttribute('data-lang'));
+      });
+    });
+  });
+
+  /* Helper to get current translation string */
+  function t(key) {
+    var src = (currentLang !== 'en' && translationCache[currentLang]) ? translationCache[currentLang] : EN;
+    return src[key] || EN[key] || key;
+  }
+
+  /* ══════════════════════════════════════════════
+     END TRANSLATION ENGINE
+     ══════════════════════════════════════════════ */
   var totalSteps  = 4;
   var formData    = {};
   var goingBack   = false;
@@ -736,8 +968,8 @@
     {
       step: 1,
       icon: '👋',
-      title: 'Nice to meet you!',
-      sub: 'Let\'s start with your basic info. Takes about 3 minutes.',
+      get title() { return t('modal_step1_title'); },
+      get sub()   { return t('modal_step1_sub'); },
       fields: `
         <div class="eg-form-row">
           <div class="eg-field">
@@ -808,8 +1040,8 @@
     {
       step: 2,
       icon: '🌍',
-      title: 'Tell us about yourself',
-      sub: 'Help us personalize your English learning experience.',
+      get title() { return t('modal_step2_title'); },
+      get sub()   { return t('modal_step2_sub'); },
       fields: `
         <div class="eg-field">
           <label>Native language <span class="eg-required">*</span></label>
@@ -871,8 +1103,8 @@
     {
       step: 3,
       icon: '📅',
-      title: 'Your schedule',
-      sub: 'Select your days off so we can schedule group classes around your availability.',
+      get title() { return t('modal_step3_title'); },
+      get sub()   { return t('modal_step3_sub'); },
       fields: `
         <div class="eg-field">
           <label>Select your days off:</label>
@@ -922,8 +1154,11 @@
     {
       step: 4,
       icon: '🎉',
-      title: function() { return "You're almost there, " + (formData.first || 'friend') + "!"; },
-      sub: "Take a quick look below. If anything looks wrong, just hit Back to fix it.",
+      title: function() {
+        var base = t('modal_step4_sub').replace('Take a quick look', "You're almost there, " + (formData.first || 'friend') + "! Take a quick look");
+        return "You're almost there, " + (formData.first || 'friend') + "!";
+      },
+      get sub() { return t('modal_step4_sub'); },
       fields: '', /* built dynamically */
       validate: function() { return null; },
       save: function() {}
@@ -1017,22 +1252,22 @@
 
   function buildReview() {
     var rows = [
-      { icon: '👤', label: 'Your name',       value: formData.first + ' ' + formData.last },
-      { icon: '📧', label: 'Email',            value: formData.email },
-      { icon: '📱', label: 'Phone',            value: (formData.country || '') + ' ' + (formData.phone || '') },
-      { icon: '💬', label: 'WhatsApp',         value: formData.whatsapp === 'yes' ? '✓ Yes' : '✗ No' },
-      { icon: '🌍', label: 'Native language',  value: formData.lang + (formData.langOther ? ' (' + formData.langOther + ')' : '') },
-      { icon: '🏭', label: 'Your facility',    value: formData.loc },
-      { icon: '📅', label: 'Start date',       value: formData.startdate },
-      { icon: '🗓️', label: 'Days off',         value: formData.daysOff || 'None selected' },
+      { icon: '👤', label: t('review_lbl_name'),    value: formData.first + ' ' + formData.last },
+      { icon: '📧', label: t('review_lbl_email'),   value: formData.email },
+      { icon: '📱', label: t('review_lbl_phone'),   value: (formData.country || '') + ' ' + (formData.phone || '') },
+      { icon: '💬', label: t('review_lbl_whatsapp'),value: formData.whatsapp === 'yes' ? '✓ ' + t('opt_yes') : '✗ ' + t('opt_no') },
+      { icon: '🌍', label: t('review_lbl_lang'),    value: formData.lang + (formData.langOther ? ' (' + formData.langOther + ')' : '') },
+      { icon: '🏭', label: t('review_lbl_loc'),     value: formData.loc },
+      { icon: '📅', label: t('review_lbl_start'),   value: formData.startdate },
+      { icon: '🗓️', label: t('review_lbl_days'),    value: formData.daysOff || '—' },
     ];
 
     /* Warm next-steps banner */
     var html = '<div style="background:linear-gradient(135deg,#eff6ff,#e0f2fe);border:1px solid #bfdbfe;border-radius:14px;padding:16px 18px;margin-bottom:20px;display:flex;gap:14px;align-items:flex-start;">' +
       '<span style="font-size:22px;flex-shrink:0;">📬</span>' +
       '<div>' +
-        '<p style="font-size:14px;font-weight:700;color:#1E3A8A;margin-bottom:3px;">What happens next?</p>' +
-        '<p style="font-size:13px;color:#3b82f6;line-height:1.55;">After you submit, you\'ll receive a welcome email within 24 hours with your login details and everything you need to get started. Your personal coach will reach out shortly after.</p>' +
+        '<p style="font-size:14px;font-weight:700;color:#1E3A8A;margin-bottom:3px;">' + t('review_next') + '</p>' +
+        '<p style="font-size:13px;color:#3b82f6;line-height:1.55;">' + t('review_next_body') + '</p>' +
       '</div>' +
     '</div>';
 
@@ -1048,7 +1283,7 @@
       '</div>';
     });
     html += '</div>';
-    html += '<p class="eg-modal-legal" style="margin-top:16px;">By submitting, I agree and consent to have an EnGen representative contact me. Participation is voluntary and free. I agree to EnGen\'s Terms of Use and Privacy Policy.</p>';
+    html += '<p class="eg-modal-legal" style="margin-top:16px;">' + t('review_legal') + '</p>';
     return html;
   }
 
@@ -1060,7 +1295,7 @@
     var fill    = document.getElementById('progress-fill');
     if (!body) return;
 
-    label.textContent = 'Step ' + n + ' of ' + totalSteps;
+    label.textContent = t('step_of') + ' ' + n + ' ' + t('of') + ' ' + totalSteps;
     fill.style.width  = Math.round((n / totalSteps) * 100) + '%';
 
     var fieldsHTML = n === 4 ? buildReview() : stepObj.fields;
@@ -1074,9 +1309,9 @@
         '<p class="eg-modal-sub">' + stepObj.sub + '</p>' +
         fieldsHTML +
         '<div class="eg-modal-nav">' +
-          (n > 1 ? '<button class="eg-btn-back" id="btn-back">← Back</button>' : '') +
+          (n > 1 ? '<button class="eg-btn-back" id="btn-back">' + t('btn_back') + '</button>' : '') +
           '<button class="eg-btn-next" id="btn-next">' +
-            (n < totalSteps ? 'Continue →' : 'Apply Now 🎉') +
+            (n < totalSteps ? t('btn_continue') : t('btn_apply')) +
           '</button>' +
         '</div>' +
       '</div>';
@@ -1090,9 +1325,9 @@
     box.innerHTML =
       '<div class="eg-success" style="animation: stepIn 0.4s cubic-bezier(0.4,0,0.2,1);">' +
         '<div class="eg-success-icon">✓</div>' +
-        '<h3>You\'re all set!</h3>' +
-        '<p>Thanks ' + formData.first + '! Your application has been received. Check your email for next steps — your EnGen coach will be in touch shortly.</p>' +
-        '<button class="eg-success-close" id="success-close">Done</button>' +
+        '<h3>' + t('success_title') + '</h3>' +
+        '<p>' + t('success_body').replace('{name}', formData.first || '') + '</p>' +
+        '<button class="eg-success-close" id="success-close">' + t('btn_done') + '</button>' +
       '</div>';
   }
 
