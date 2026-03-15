@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EnGen × Gap Inc. — Improve Your English, Free</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f4f3f0;
+    color: #1a1a2e;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  .eg-nav {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .eg-logo { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.5px; }
+  .eg-logo span:first-child { color: #1E3A8A; }
+  .eg-logo span:last-child { color: #38bdf8; }
+  .eg-nav-cta {
+    background: #1E3A8A; color: #fff; border: none;
+    padding: 10px 22px; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .eg-nav-cta:hover { background: #1e40af; }
+
+  /* HERO */
+  .eg-hero {
+    background: linear-gradient(135deg, #1E3A8A 0%, #3730a3 60%, #5b21b6 100%);
+    padding: 80px 2rem 90px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .eg-hero::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 340px; height: 340px; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .eg-hero::after {
+    content: ''; position: absolute; bottom: -80px; left: -40px;
+    width: 280px; height: 280px; border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .eg-hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 100px; padding: 7px 18px;
+    font-size: 13px; color: rgba(255,255,255,0.9); font-weight: 500;
+    margin-bottom: 28px; letter-spacing: 0.2px;
+  }
+  .eg-hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #34d399; }
+  .eg-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 5.5vw, 62px);
+    color: #ffffff; line-height: 1.1;
+    margin-bottom: 22px; letter-spacing: -1px;
+    max-width: 740px; margin-left: auto; margin-right: auto;
+  }
+  .eg-hero h1 em { font-style: italic; color: #93c5fd; }
+  .eg-hero-sub {
+    font-size: 18px; color: rgba(255,255,255,0.75);
+    max-width: 480px; margin: 0 auto 44px;
+    line-height: 1.65; font-weight: 400;
+  }
+  .eg-hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #ffffff; color: #1E3A8A; border: none;
+    padding: 18px 40px; border-radius: 12px;
+    font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 700;
+    cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 28px rgba(0,0,0,0.22); letter-spacing: -0.2px;
+  }
+  .eg-hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(0,0,0,0.28); }
+  .eg-hero-cta:active { transform: translateY(0); }
+  .eg-hero-arrow { font-size: 20px; display: inline-block; transition: transform 0.2s; }
+  .eg-hero-cta:hover .eg-hero-arrow { transform: translateX(5px); }
+  .eg-hero-note { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.55); }
+  .eg-gap-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px; padding: 10px 20px; margin-top: 30px;
+    font-size: 14px; color: rgba(255,255,255,0.8);
+  }
+  .eg-gap-logo { font-size: 15px; font-weight: 900; color: #fff; letter-spacing: 2px; }
+
+  /* STATS */
+  .eg-stats {
+    background: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.07);
+    display: flex; justify-content: center; flex-wrap: wrap;
+  }
+  .eg-stat { padding: 28px 44px; text-align: center; border-right: 1px solid rgba(0,0,0,0.07); }
+  .eg-stat:last-child { border-right: none; }
+  .eg-stat-num { font-family: 'DM Serif Display', serif; font-size: 34px; color: #1E3A8A; line-height: 1; margin-bottom: 5px; }
+  .eg-stat-label { font-size: 13px; color: #6b7280; font-weight: 400; max-width: 120px; line-height: 1.4; }
+
+  /* SECTIONS */
+  .eg-section { padding: 80px 2rem; max-width: 980px; margin: 0 auto; }
+  .eg-section-tag { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #1E3A8A; margin-bottom: 12px; }
+  .eg-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 3.5vw, 42px); color: #111827; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 16px; }
+  .eg-section-intro { font-size: 17px; color: #4b5563; line-height: 1.7; max-width: 600px; margin-bottom: 52px; }
+
+  /* FEATURE CARDS */
+  .eg-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .eg-feature-card {
+    background: #ffffff; border-radius: 16px; padding: 30px 28px 34px;
+    border: 1px solid rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .eg-feature-card:hover { transform: translateY(-4px); box-shadow: 0 10px 36px rgba(0,0,0,0.09); }
+  .eg-feature-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px; font-size: 24px;
+  }
+  .eg-icon-blue { background: #dbeafe; }
+  .eg-icon-green { background: #d1fae5; }
+  .eg-icon-purple { background: #ede9fe; }
+  .eg-icon-amber { background: #fef3c7; }
+  .eg-feature-title { font-size: 16px; font-weight: 700; color: #111827; margin-bottom: 10px; }
+  .eg-feature-desc { font-size: 14px; color: #6b7280; line-height: 1.7; }
+
+  /* TESTIMONIAL */
+  .eg-testimonial-wrap {
+    background: linear-gradient(135deg, #1E3A8A 0%, #3730a3 100%);
+    padding: 72px 2rem;
+  }
+  .eg-testimonial-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+  .eg-quote-mark { font-family: 'DM Serif Display', serif; font-size: 90px; color: rgba(255,255,255,0.2); line-height: 0.8; margin-bottom: 8px; }
+  .eg-quote-text { font-family: 'DM Serif Display', serif; font-size: clamp(22px, 3vw, 32px); color: #ffffff; line-height: 1.4; margin-bottom: 26px; font-style: italic; }
+  .eg-quote-source { font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: 0.5px; }
+
+  /* STEPS */
+  .eg-steps-section { padding: 80px 2rem; background: #ffffff; }
+  .eg-steps-inner { max-width: 940px; margin: 0 auto; }
+  .eg-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; margin-top: 52px; }
+  .eg-step { padding: 0 36px 0 0; position: relative; }
+  .eg-step:last-child { padding-right: 0; }
+  .eg-step-num {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: #1E3A8A; color: #fff;
+    font-size: 20px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px; font-family: 'DM Serif Display', serif;
+  }
+  .eg-step-title { font-size: 17px; font-weight: 700; color: #111827; margin-bottom: 10px; }
+  .eg-step-desc { font-size: 14px; color: #6b7280; line-height: 1.7; }
+  .eg-step-connector { position: absolute; top: 24px; right: 0; width: 36px; height: 2px; background: #dbeafe; }
+  .eg-step:last-child .eg-step-connector { display: none; }
+  .eg-steps-cta { margin-top: 56px; text-align: center; }
+  .eg-steps-cta button {
+    background: #1E3A8A; color: #fff; border: none;
+    padding: 16px 44px; font-size: 16px; font-weight: 700;
+    border-radius: 10px; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .eg-steps-cta button:hover { background: #1e40af; transform: translateY(-1px); }
+
+  /* FAQ */
+  .eg-faq-section { padding: 80px 2rem; background: #f4f3f0; }
+  .eg-faq-inner { max-width: 740px; margin: 0 auto; }
+  .eg-faq-inner h2 { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 3vw, 38px); color: #111827; letter-spacing: -0.5px; margin-bottom: 40px; }
+  .eg-faq-item { background: #ffffff; border-radius: 12px; margin-bottom: 10px; border: 1px solid rgba(0,0,0,0.07); overflow: hidden; }
+  .eg-faq-q {
+    padding: 22px 26px; font-size: 15px; font-weight: 600; color: #111827;
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    user-select: none; gap: 16px;
+  }
+  .eg-faq-q:hover { background: #f9fafb; }
+  .eg-faq-chevron { font-size: 20px; color: #1E3A8A; transition: transform 0.25s; flex-shrink: 0; font-weight: 300; }
+  .eg-faq-chevron.open { transform: rotate(180deg); }
+  .eg-faq-a {
+    font-size: 14px; color: #4b5563; line-height: 1.7;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 26px;
+  }
+  .eg-faq-a.open { max-height: 220px; padding: 0 26px 22px; }
+
+  /* BOTTOM CTA */
+  .eg-bottom-cta { background: #1E3A8A; padding: 80px 2rem; text-align: center; }
+  .eg-bottom-cta h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 3.5vw, 44px); color: #ffffff; margin-bottom: 16px; letter-spacing: -0.5px; }
+  .eg-bottom-cta p { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 40px; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .eg-bottom-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #ffffff; color: #1E3A8A; border: none;
+    padding: 18px 44px; border-radius: 12px;
+    font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 700;
+    cursor: pointer; transition: transform 0.15s; letter-spacing: -0.2px;
+  }
+  .eg-bottom-btn:hover { transform: translateY(-2px); }
+
+  /* FOOTER */
+  .eg-footer { background: #111827; padding: 32px 2rem; text-align: center; font-size: 13px; color: rgba(255,255,255,0.4); }
+  .eg-footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .eg-footer a:hover { color: rgba(255,255,255,0.8); }
+  .eg-footer-links { margin-top: 8px; }
+
+  /* MODAL */
+  .eg-modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.6); z-index: 999;
+    align-items: center; justify-content: center; padding: 1rem;
+  }
+  .eg-modal-overlay.active { display: flex; }
+  .eg-modal {
+    background: #fff; border-radius: 22px;
+    padding: 44px 38px; max-width: 500px; width: 100%;
+    position: relative; animation: slideUp 0.25s ease;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(24px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .eg-modal-close {
+    position: absolute; top: 18px; right: 22px;
+    background: none; border: none; font-size: 24px;
+    cursor: pointer; color: #9ca3af; line-height: 1;
+  }
+  .eg-modal-close:hover { color: #111827; }
+  .eg-modal h3 { font-family: 'DM Serif Display', serif; font-size: 28px; color: #111827; margin-bottom: 6px; letter-spacing: -0.3px; }
+  .eg-modal-sub { font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.5; }
+  .eg-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .eg-field label { display: block; font-size: 12px; font-weight: 700; color: #374151; margin-bottom: 6px; letter-spacing: 0.4px; text-transform: uppercase; }
+  .eg-field input, .eg-field select {
+    width: 100%; padding: 12px 14px;
+    border: 1.5px solid #e5e7eb; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; color: #111827;
+    background: #fff; outline: none; transition: border-color 0.2s; appearance: none;
+  }
+  .eg-field input:focus, .eg-field select:focus { border-color: #1E3A8A; }
+  .eg-field-full { margin-bottom: 14px; }
+  .eg-submit-btn {
+    width: 100%; background: #1E3A8A; color: #fff; border: none;
+    padding: 16px; border-radius: 10px;
+    font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700;
+    cursor: pointer; margin-top: 8px; transition: background 0.2s; letter-spacing: -0.2px;
+  }
+  .eg-submit-btn:hover { background: #1e40af; }
+  .eg-modal-legal { font-size: 11.5px; color: #9ca3af; text-align: center; margin-top: 14px; line-height: 1.5; }
+  .eg-success { text-align: center; padding: 24px 0; }
+  .eg-success-icon {
+    width: 68px; height: 68px; border-radius: 50%; background: #d1fae5;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 22px; font-size: 30px;
+  }
+  .eg-success h3 { font-family: 'DM Serif Display', serif; font-size: 24px; color: #111827; margin-bottom: 10px; }
+  .eg-success p { font-size: 14px; color: #6b7280; line-height: 1.65; }
+
+  @media (max-width: 600px) {
+    .eg-stat { padding: 20px 24px; }
+    .eg-form-row { grid-template-columns: 1fr; }
+    .eg-steps { gap: 40px; }
+    .eg-step { padding: 0; }
+    .eg-step-connector { display: none; }
+    .eg-modal { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="eg-nav">
+  <div class="eg-logo"><span>EN</span><span>GEN</span></div>
+  <button class="eg-nav-cta" onclick="openModal()">Get Started Free →</button>
+</nav>
+
+<!-- HERO -->
+<section class="eg-hero">
+  <div class="eg-hero-badge">
+    <span class="eg-hero-badge-dot"></span>
+    Free for Gap Inc. employees
+  </div>
+  <h1>Improve your English.<br><em>Unlock your future.</em></h1>
+  <p class="eg-hero-sub">Learn at your own pace, from your phone or computer — anytime, day or night.</p>
+  <button class="eg-hero-cta" onclick="openModal()">
+    Start Learning for Free
+    <span class="eg-hero-arrow">→</span>
+  </button>
+  <p class="eg-hero-note">No cost · 6 months access · Personal coach included</p>
+  <div class="eg-gap-badge">
+    <span>Provided by</span>
+    <span class="eg-gap-logo">GAP INC.</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="eg-stats">
+  <div class="eg-stat">
+    <div class="eg-stat-num">94%</div>
+    <div class="eg-stat-label">improved their English confidence</div>
+  </div>
+  <div class="eg-stat">
+    <div class="eg-stat-num">79%</div>
+    <div class="eg-stat-label">achieved a career goal or promotion</div>
+  </div>
+  <div class="eg-stat">
+    <div class="eg-stat-num">92%</div>
+    <div class="eg-stat-label">improved their job skills too</div>
+  </div>
+  <div class="eg-stat">
+    <div class="eg-stat-num">6mo</div>
+    <div class="eg-stat-label">of full access, completely free</div>
+  </div>
+</div>
+
+<!-- WHAT IS ENGEN -->
+<section class="eg-section">
+  <p class="eg-section-tag">What is EnGen?</p>
+  <h2>Your personal English<br>learning platform</h2>
+  <p class="eg-section-intro">EnGen is an AI-powered platform that personalizes English instruction to your level, goals, and schedule. Over 170 workforce-aligned courses — built for real life at work and beyond.</p>
+  <div class="eg-features">
+    <div class="eg-feature-card">
+      <div class="eg-feature-icon eg-icon-blue">📱</div>
+      <div class="eg-feature-title">Learn anywhere, anytime</div>
+      <div class="eg-feature-desc">Access lessons from your phone, tablet, or computer — 24 hours a day, 7 days a week. Study at home, on the bus, or on your break.</div>
+    </div>
+    <div class="eg-feature-card">
+      <div class="eg-feature-icon eg-icon-green">🎯</div>
+      <div class="eg-feature-title">Personalized to you</div>
+      <div class="eg-feature-desc">EnGen adapts to your English level and goals. Whether you want to communicate at work, with customers, or in daily life — the platform builds a path just for you.</div>
+    </div>
+    <div class="eg-feature-card">
+      <div class="eg-feature-icon eg-icon-purple">👩‍🏫</div>
+      <div class="eg-feature-title">Live classes + a coach</div>
+      <div class="eg-feature-desc">Join 8 live group classes every month to practice speaking. A personal EnGen coach is also there to help you stay on track and reach your goals.</div>
+    </div>
+    <div class="eg-feature-card">
+      <div class="eg-feature-icon eg-icon-amber">🏆</div>
+      <div class="eg-feature-title">Earn a certificate</div>
+      <div class="eg-feature-desc">Complete the program and receive an official certificate of completion with a certified English proficiency level — something you can show employers.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<div class="eg-testimonial-wrap">
+  <div class="eg-testimonial-inner">
+    <div class="eg-quote-mark">"</div>
+    <p class="eg-quote-text">I don't need a translator to communicate with my coworkers and friends anymore.</p>
+    <p class="eg-quote-source">— EnGen Learner, Gap Inc.</p>
+  </div>
+</div>
+
+<!-- STEPS -->
+<section class="eg-steps-section">
+  <div class="eg-steps-inner">
+    <p class="eg-section-tag">How it works</p>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,42px);color:#111827;letter-spacing:-0.5px;margin-bottom:10px;">Get started in 3 easy steps</h2>
+    <p style="font-size:17px;color:#4b5563;line-height:1.7;">Signing up takes less than 2 minutes.</p>
+    <div class="eg-steps">
+      <div class="eg-step">
+        <div class="eg-step-connector"></div>
+        <div class="eg-step-num">1</div>
+        <div class="eg-step-title">Fill out the form</div>
+        <div class="eg-step-desc">Complete the short registration form. It only takes a minute and is completely free for Gap Inc. employees.</div>
+      </div>
+      <div class="eg-step">
+        <div class="eg-step-connector"></div>
+        <div class="eg-step-num">2</div>
+        <div class="eg-step-title">Check your email</div>
+        <div class="eg-step-desc">After registering, you'll receive an email with instructions on how to access the EnGen platform and your next steps.</div>
+      </div>
+      <div class="eg-step">
+        <div class="eg-step-num">3</div>
+        <div class="eg-step-title">Start learning</div>
+        <div class="eg-step-desc">Download the EnGen app or log in on any browser. Your personal coach will reach out to help you build your learning plan.</div>
+      </div>
+    </div>
+    <div class="eg-steps-cta">
+      <button onclick="openModal()">Register Now — It's Free →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="eg-faq-section">
+  <div class="eg-faq-inner">
+    <p class="eg-section-tag">Questions?</p>
+    <h2>Common questions answered</h2>
+    <div id="faq-list"></div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="eg-bottom-cta">
+  <h2>Ready to grow your English?</h2>
+  <p>It's free, flexible, and built around your life. Enroll today and start your journey.</p>
+  <button class="eg-bottom-btn" onclick="openModal()">Sign Up for Free →</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="eg-footer">
+  <p>© 2025 Voxy EnGen, PBC. All Rights Reserved. &nbsp;|&nbsp;
+    <a href="https://getengen.com/privacy-policy" target="_blank">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="https://getengen.com/terms" target="_blank">Terms of Use</a>
+  </p>
+  <p class="eg-footer-links" style="margin-top:8px;">Questions? Email <a href="mailto:help@getengen.com">help@getengen.com</a> or contact your Gap Inc. HR Department</p>
+</footer>
+
+<!-- MODAL -->
+<div class="eg-modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+  <div class="eg-modal" id="modal-box">
+    <button class="eg-modal-close" onclick="closeModal()">×</button>
+    <div id="modal-form-content">
+      <h3>Create your free account</h3>
+      <p class="eg-modal-sub">Provided by Gap Inc. at no cost. Takes less than 2 minutes to sign up.</p>
+      <div class="eg-form-row">
+        <div class="eg-field">
+          <label>First name</label>
+          <input type="text" id="f-first" placeholder="Maria" />
+        </div>
+        <div class="eg-field">
+          <label>Last name</label>
+          <input type="text" id="f-last" placeholder="Garcia" />
+        </div>
+      </div>
+      <div class="eg-field eg-field-full">
+        <label>Work email address</label>
+        <input type="email" id="f-email" placeholder="maria@gap.com" />
+      </div>
+      <div class="eg-field eg-field-full">
+        <label>Facility / Location</label>
+        <select id="f-loc">
+          <option value="">Select your facility</option>
+          <option>Fishkill CEC</option>
+          <option>Gallatin CEC</option>
+          <option>Brampton CEC</option>
+          <option>Fresno CEC</option>
+          <option>Longview CEC</option>
+          <option>Phoenix CEC</option>
+          <option>Groveport CEC</option>
+        </select>
+      </div>
+      <div class="eg-field eg-field-full">
+        <label>My English goal is...</label>
+        <select id="f-goal">
+          <option value="">Choose a goal</option>
+          <option>Communicate better at work</option>
+          <option>Advance my career / get a promotion</option>
+          <option>Talk more confidently with customers</option>
+          <option>Improve for daily life</option>
+          <option>All of the above</option>
+        </select>
+      </div>
+      <button class="eg-submit-btn" onclick="submitForm()">Complete Registration →</button>
+      <p class="eg-modal-legal">By registering you agree to EnGen's Terms of Use and Privacy Policy. Participation is voluntary and free for all eligible Gap Inc. employees.</p>
+    </div>
+    <div id="modal-success" style="display:none;">
+      <div class="eg-success">
+        <div class="eg-success-icon">✓</div>
+        <h3>You're registered!</h3>
+        <p>Check your email for your next steps. Your EnGen coach will be in touch shortly to help you get started on your English journey.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const faqs = [
+  { q: "Do I have to pay anything?", a: "No — Gap Inc. covers the full cost of the EnGen program. It is completely free for all eligible employees." },
+  { q: "Who is eligible to participate?", a: "All Gap Inc. employees at the Fishkill, Gallatin, Brampton, Fresno, Longview, Phoenix, or Groveport distribution centers who are English language learners. Spots are available on a first-come, first-served basis." },
+  { q: "How long will I have access?", a: "You will have 6 months of full access to the EnGen platform, including live group classes, self-paced lessons, pronunciation tools, and your personal coach." },
+  { q: "How much time do I need each week?", a: "We recommend studying 2–3 hours per week and attending 2 live classes. Consistency is the key to seeing real progress in your English." },
+  { q: "Can I learn on my phone?", a: "Yes! EnGen works on any smartphone, tablet, or computer. Search 'EnGen' in your app store or visit app.getengen.com in any browser." },
+  { q: "What if I have more questions?", a: "Email help@getengen.com or contact your Gap Inc. HR Department. An EnGen coach will also be available once you sign up." }
+];
+
+const faqList = document.getElementById('faq-list');
+faqs.forEach((item, i) => {
+  const div = document.createElement('div');
+  div.className = 'eg-faq-item';
+  div.innerHTML = `
+    <div class="eg-faq-q" onclick="toggleFaq(${i})">
+      <span>${item.q}</span>
+      <span class="eg-faq-chevron" id="chev-${i}">⌄</span>
+    </div>
+    <div class="eg-faq-a" id="faq-a-${i}">${item.a}</div>
+  `;
+  faqList.appendChild(div);
+});
+
+function toggleFaq(i) {
+  const ans = document.getElementById('faq-a-' + i);
+  const chev = document.getElementById('chev-' + i);
+  const isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.eg-faq-a').forEach(el => el.classList.remove('open'));
+  document.querySelectorAll('.eg-faq-chevron').forEach(el => el.classList.remove('open'));
+  if (!isOpen) { ans.classList.add('open'); chev.classList.add('open'); }
+}
+
+function openModal() {
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal')) closeModal();
+}
+function submitForm() {
+  const first = document.getElementById('f-first').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const loc = document.getElementById('f-loc').value;
+  if (!first || !email || !loc) {
+    alert('Please fill in your name, email, and facility to continue.');
+    return;
+  }
+  document.getElementById('modal-form-content').style.display = 'none';
+  document.getElementById('modal-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
