@@ -58,15 +58,15 @@
     border-radius: 20px; background: #fff;
     border: 1px solid #e5e7eb;
     transition: background 0.2s, border-color 0.2s;
-    white-space: nowrap; cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
   }
   .eg-lang-link:hover { background: #eff6ff; border-color: #93c5fd; }
+  .eg-lang-active {
+    background: #1E3A8A !important; color: #fff !important;
+    border-color: #1E3A8A !important;
+  }
+  .eg-lang-active:hover { background: #1e40af !important; }
   .eg-lang-divider { color: #d1d5db; font-size: 12px; }
-  /* Hide Google Translate toolbar injected at top of page */
-  .goog-te-banner-frame, .skiptranslate { display: none !important; }
-  body { top: 0 !important; }
-  .goog-te-gadget { display: none !important; }
   @media (max-width: 480px) {
     .eg-lang-bar { gap: 6px; padding: 8px 1rem; }
     .eg-lang-bar-label { display: none; }
@@ -525,66 +525,16 @@
 <!-- LANGUAGE BAR -->
 <div class="eg-lang-bar">
   <span class="eg-lang-bar-label">Read this page in:</span>
-  <button class="eg-lang-link" id="btn-es">🇪🇸 Español</button>
+  <a href="#" class="eg-lang-link eg-lang-active" id="lang-en">🇺🇸 English</a>
   <span class="eg-lang-divider">·</span>
-  <button class="eg-lang-link" id="btn-sw">🇰🇪 Kiswahili</button>
+  <a href="https://getengen.com/gap-spanish-learner-page" class="eg-lang-link" target="_blank">🇪🇸 Español</a>
   <span class="eg-lang-divider">·</span>
-  <button class="eg-lang-link" id="btn-pa">🇮🇳 ਪੰਜਾਬੀ</button>
+  <a href="https://getengen.com/gap-swahili-learner-page" class="eg-lang-link" target="_blank">🇰🇪 Kiswahili</a>
   <span class="eg-lang-divider">·</span>
-  <button class="eg-lang-link" id="btn-fr">🇫🇷 Français</button>
+  <a href="https://getengen.com/gap-punjabi" class="eg-lang-link" target="_blank">🇮🇳 ਪੰਜਾਬੀ</a>
+  <span class="eg-lang-divider">·</span>
+  <a href="https://getengen.com/gap-learner-page-french" class="eg-lang-link" target="_blank">🇫🇷 Français</a>
 </div>
-
-<!-- Google Translate hidden element -->
-<div id="google_translate_element" style="display:none;"></div>
-
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      autoDisplay: false,
-      includedLanguages: 'es,sw,pa,fr,en'
-    }, 'google_translate_element');
-  }
-
-  function doTranslate(lang) {
-    var combo = document.querySelector('select.goog-te-combo');
-    if (combo) {
-      combo.value = lang;
-      combo.dispatchEvent(new Event('change'));
-    }
-  }
-
-  /* Attach listeners after page loads */
-  window.addEventListener('load', function() {
-    var map = { 'btn-es': 'es', 'btn-sw': 'sw', 'btn-pa': 'pa', 'btn-fr': 'fr' };
-    Object.keys(map).forEach(function(id) {
-      var btn = document.getElementById(id);
-      if (btn) {
-        btn.addEventListener('click', function() {
-          /* Wait up to 3s for Google widget to be ready */
-          var lang = map[id];
-          var attempts = 0;
-          var interval = setInterval(function() {
-            var combo = document.querySelector('select.goog-te-combo');
-            if (combo) {
-              clearInterval(interval);
-              combo.value = lang;
-              combo.dispatchEvent(new Event('change'));
-            } else if (attempts++ > 30) {
-              clearInterval(interval);
-              /* Final fallback: open Google Translate in new tab */
-              window.open(
-                'https://translate.google.com/translate?sl=en&tl=' + lang + '&u=' + encodeURIComponent(window.location.href),
-                '_blank'
-              );
-            }
-          }, 100);
-        });
-      }
-    });
-  });
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
 <!-- HERO -->
 <section class="eg-hero">
